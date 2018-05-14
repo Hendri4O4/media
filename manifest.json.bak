@@ -1,0 +1,27 @@
+{
+  "name": "Media Manager",
+  "module_uri": "https://goo.gl/G26BTB",
+  "description": "The Media Manager is a tool for uploading or deleting media on your CodeIgniter Skeleton application. Tools included are: upload new file(s), updating file(s) details and deleting file(s).",
+  "version": "1.0.0",
+  "license": "MIT",
+  "license_uri": "http://opensource.org/licenses/MIT",
+  "author": "Kader Bouyakoub",
+  "author_uri": "https://goo.gl/wGXHO9",
+  "author_email": "bkade@mail.com",
+  "tags": "csk, codeigniter, skeleton, media, library",
+  "routes": {
+    "media(.*)": "media/index$1"
+  },
+  "translations": {
+    "french": {
+      "name": "Gestionnaire des médias",
+      "description": "Le Gestionnaire de médias est un outil pour télécharger ou supprimer des médias sur votre application CodeIgniter Skeleton. Les fonctionnalités incluses sont: télécharger de nouveaux fichiers, mettre à jour les détails des fichiers et supprimer les fichiers.",
+      "admin_menu": "Médias"
+    },
+    "arabic": {
+      "name": "إدارة الوسائط",
+      "description": "يعد موديل إدارة الوسائط أداة لتحميل أو حذف الوسائط على تطبيق كوديجنتر سكلتون الخاص بك. الأدوات المضمنة هي: تحميل ملف (ملفات) جديد(ة)، تحديث تفاصيل الملف (الملفات) وحذف الملف (الملفات).",
+      "admin_menu": "الوسائط"
+    }
+  }
+}
