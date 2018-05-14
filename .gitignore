@@ -1,0 +1,13 @@
+# Ignore unnecessary folders.
+.DS_Store
+.phpintel
+
+# Ignore some files.
+enabled
+manifest.json
+
+# Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
