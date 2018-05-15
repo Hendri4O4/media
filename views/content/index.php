@@ -170,7 +170,7 @@ echo $pagination;
 							</div>
 							<div class="form-group">
 								<label for="description"><?php _e('CSK_MEDIA_DESCRIPTION'); ?></label>
-								<textarea class="form-control" type="text" name="description" id="description" placeholder="<?php _e('CSK_MEDIA_DESCRIPTION'); ?>">{{description}}</textarea>
+								<textarea class="form-control" type="text" name="description" id="description" placeholder="<?php _e('CSK_MEDIA_DESCRIPTION'); ?>">{{{description}}}</textarea>
 							</div>
 							<?php echo submit_button(null, 'primary small icon:paper-plane nowrap'); ?>
 							{{{delete_btn}}}

@@ -21,8 +21,10 @@ class Ajax extends AJAX_Controller {
 	{
 		parent::__construct();
 
-		// We make sure to load the media language.
-		$this->load->language('media/media');
+		if ( ! class_exists('Media_lib', false))
+		{
+			$this->load->library('media/Media_lib', null, 'media');
+		}
 
 		// We add our safe AJAX methods.
 		$this->safe_methods[] = 'upload';
@@ -210,7 +212,9 @@ class Ajax extends AJAX_Controller {
 		$media['thumbnail']    = get_media_src($db_media, 'thumbnail');
 		$media['delete_nonce'] = create_nonce('delete_media_'.$media_id);
 		
-		log_activity($this->c_user->id, 'lang:act_media_upload::'.$media_id);
+		// log_activity($this->c_user->id, 'lang:act_media_upload::'.$media_id);
+		// TODO: Log the activity.
+		log_activity($this->c_user->id, 'Uploaded new media: #'.$media_id);
 
 		$this->response->header  = self::HTTP_OK;
 		$this->response->message = line('CSK_MEDIA_SUCCESS_UPLOAD');
@@ -258,7 +262,9 @@ class Ajax extends AJAX_Controller {
 
 		if (false !== $this->media->delete($id))
 		{
-			log_activity($this->c_user->id, 'lang:act_media_delete::'.$id);			
+			// log_activity($this->c_user->id, 'lang:act_media_delete::'.$id);			
+			// TODO: Log the activity.
+			log_activity($this->c_user->id, 'Deleted media: #'.$id);			
 		
 			$this->response->header  = self::HTTP_OK;
 			$this->response->message = line('CSK_MEDIA_SUCCESS_DELETE');
@@ -319,7 +325,8 @@ class Ajax extends AJAX_Controller {
 
 		if (false !== $media->update($data))
 		{
-			log_activity($this->c_user->id, 'lang:act_media_update::'.$id);
+			// TODO: Log the activity.
+			log_activity($this->c_user->id, 'Updated media details: #'.$id);
 			
 			$this->response->header  = self::HTTP_OK;
 			$this->response->message = line('CSK_MEDIA_SUCCESS_UPDATE');

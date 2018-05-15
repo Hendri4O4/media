@@ -40,8 +40,8 @@ $lang['CSK_MEDIA_ERROR_UPDATE']  = 'Unable to update media item.';
 $lang['CSK_MEDIA_ERROR_MISSING'] = 'No media file found.';
 
 // Media permissions.
-$lang['CSK_MEDIA_ERROR_PERMISSION_UPDATE'] = 'Only an admin or the owner of this item can update it.';
 $lang['CSK_MEDIA_ERROR_PERMISSION_DELETE'] = 'Only an admin or the owner of this item can delete it.';
+$lang['CSK_MEDIA_ERROR_PERMISSION_UPDATE'] = 'Only an admin or the owner of this item can update it.';
 
 // Add and selection action.
 $lang['CSK_MEDIA_ADD']           = 'Add Media';

@@ -20,7 +20,8 @@ class Media_lib
 	{
 		$this->ci =& get_instance();
 
-		$this->ci->load->language('media/media');
+		$this->ci->load->language('media/csk_media');
+
 		// We register themes images action.
 		add_action('_set_images_sizes', array($this, '_set_images_sizes'));
 

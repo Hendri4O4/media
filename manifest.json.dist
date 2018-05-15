@@ -1,6 +1,6 @@
 {
   "name": "Media Manager",
-  "module_uri": "https://goo.gl/G26BTB",
+  "module_uri": "https://goo.gl/bfs7kp",
   "description": "The Media Manager is a tool for uploading or deleting media on your CodeIgniter Skeleton application. Tools included are: upload new file(s), updating file(s) details and deleting file(s).",
   "version": "1.0.0",
   "license": "MIT",

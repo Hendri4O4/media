@@ -12,8 +12,11 @@ class Content extends Admin_Controller {
 		// Call parent constructor.
 		parent::__construct();
 
-		// Make sure to load media library.
-		$this->load->language('media/media');
+		// Make sure to load the library if not already loaded.
+		if ( ! class_exists('Media_lib', false))
+		{
+			$this->load->library('media/media_lib', null, 'media');
+		}
 
 		add_filter('admin_head', array($this, '_admin_head'));
 
@@ -26,8 +29,8 @@ class Content extends Admin_Controller {
 		
 		// Add needed assets.
 		$this->theme
-			->add('css', modules_url('media/assets/css/media.min.css'))
-			->add('js', modules_url('media/assets/js/media.js'));
+			->add('css', modules_url('media/assets/css/media'))
+			->add('js', modules_url('media/assets/js/media'));
 	}
 
 	// ------------------------------------------------------------------------
@@ -176,9 +179,9 @@ class Content extends Admin_Controller {
 			echo html_tag('button', array(
 				'type'  => 'button',
 				'role'  => 'button',
-				'class' => 'ml-3 btn btn-primary btn-sm btn-icon',
+				'class' => 'ml-3 btn btn-success btn-sm btn-icon',
 				'id'    => 'media-add',
-			), fa_icon('upload').line('CSK_MEDIA_ADD')),
+			), fa_icon('plus-circle').line('CSK_MEDIA_ADD')),
 
 			// Bulk selection buttons.
 			html_tag('button', array(
