@@ -1,18 +1,56 @@
 <?php
+/**
+ * CodeIgniter Skeleton - Media Manager Module
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2018, Kader Bouyakoub <bkader@mail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package 	CodeIgniter
+ * @subpackage 	Skeleton
+ * @category 	Modules
+ * @author 		Kader Bouyakoub <bkader@mail.com>
+ * @copyright	Copyright (c) 2018, Kader Bouyakoub <bkader@mail.com>
+ * @license 	http://opensource.org/licenses/MIT	MIT License
+ * @link 		https://goo.gl/bfs7kp
+ * @since 		1.0.0
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Ajax Class
+ *
+ * @package 	CodeIgniter
+ * @subpackage 	Skeleton
+ * @category 	Modules\Controllers
+ * @author 		Kader Bouyakoub <bkader@mail.com>
+ * @link 		https://goo.gl/wGXHO9
+ * @copyright 	Copyright (c) 2018, Kader Bouyakoub (https://goo.gl/wGXHO9)
+ * @since 		1.0.0
+ * @version 	1.0.0
+ */
 class Ajax extends AJAX_Controller {
 
 	/**
-	 * __construct
-	 *
-	 * Simply calling parent's constructor, add AJAX methods and make sure
-	 * to load media module language file.
-	 *
-	 * @author 	Kader Bouyakoub
-	 * @link 	https://goo.gl/wGXHO9
-	 * @since 	1.3.3
-	 *
+	 * Class constructor
 	 * @access 	public
 	 * @param 	none
 	 * @return 	void
@@ -27,10 +65,10 @@ class Ajax extends AJAX_Controller {
 		}
 
 		// We add our safe AJAX methods.
-		$this->safe_methods[] = 'upload';
-		$this->safe_methods[] = 'delete';
-		$this->safe_methods[] = 'update';
-		$this->safe_methods[] = 'get';
+		$this->safe_admin_methods[] = 'upload';
+		$this->safe_admin_methods[] = 'delete';
+		$this->safe_admin_methods[] = 'update';
+		$this->safe_admin_methods[] = 'get';
 	}
 
 	// ------------------------------------------------------------------------
