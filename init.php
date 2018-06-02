@@ -8,7 +8,7 @@ if ( ! class_exists('Csk_media_module', false)):
  * @package 	CodeIgniter
  * @subpackage 	Skeleton
  * @category 	Modules\Initialize
- * @author 		Kader Bouyakoub <bkader@mail.com>
+ * @author 		Kader Bouyakoub <bkader[at]mail[dot]com>
  * @link 		https://goo.gl/wGXHO9
  * @copyright 	Copyright (c) 2018, Kader Bouyakoub (https://goo.gl/wGXHO9)
  * @since 		1.0.0
@@ -124,6 +124,11 @@ class Csk_media_module {
 			$CI->kbcore->options->create($data);
 		}
 
+		if (function_exists('is_role') && is_role('administrator'))
+		{
+			add_permission('administrator', 'manage_media', true);
+		}
+
 		return true;
 	}
 
@@ -192,5 +197,23 @@ add_action('module_deactivate_media', array('Csk_media_module', 'deactivate'));
  * @since 	1.0.0
  */
 add_action('module_loaded_media', array('Csk_media_module', 'autoloader'));
+
+add_action('admin_index_stats', function() {
+	$count = get_instance()->media->count();
+	$output = '<div class="col-xs-6 col-sm-6 col-md-3">';
+	$output .= '<div class="info-box bg-brown">';
+	$output .= '<div class="inner">';
+	$output .= '<h3>'.$count.'</h3>';
+	$output .= '<p>'.line('CSK_MEDIA').'</p>';
+	$output .= '</div>';
+	$output .= '<div class="icon"><i class="fa fa-fw fa-picture-o"></i></div>';
+	$output .= html_tag('a', array(
+		'href' => admin_url('media'),
+		'class' => 'info-box-footer'
+	), line('CSK_BTN_MANAGE').fa_icon('arrow-circle-right ml-1'));
+	$output .= '</div>';
+	$output .= '</div>';
+	echo $output;
+});
 
 endif; // End of the Csk_media_module class.

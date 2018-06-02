@@ -4,7 +4,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2018, Kader Bouyakoub <bkader@mail.com>
+ * Copyright (c) 2018, Kader Bouyakoub <bkader[at]mail[dot]com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,8 +27,8 @@
  * @package 	CodeIgniter
  * @subpackage 	Skeleton
  * @category 	Modules
- * @author 		Kader Bouyakoub <bkader@mail.com>
- * @copyright	Copyright (c) 2018, Kader Bouyakoub <bkader@mail.com>
+ * @author 		Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright	Copyright (c) 2018, Kader Bouyakoub <bkader[at]mail[dot]com>
  * @license 	http://opensource.org/licenses/MIT	MIT License
  * @link 		https://goo.gl/bfs7kp
  * @since 		1.0.0
@@ -65,8 +65,8 @@ class Content extends Admin_Controller {
 		
 		// Add needed assets.
 		$this->theme
-			->add('css', modules_url('media/assets/css/media'))
-			->add('js', modules_url('media/assets/js/media'));
+			->add('css', modules_url('media/assets/css/media.css'))
+			->add('js', modules_url('media/assets/js/media.js'));
 	}
 
 	// ------------------------------------------------------------------------
@@ -85,6 +85,11 @@ class Content extends Admin_Controller {
 	 */
 	public function index()
 	{
+		// if (function_exists('acl_require_permission'))
+		// {
+		// 	acl_require_permission('view', 'media', KB_ADMIN);
+		// }
+
 		$this->prep_form(array(
 			array( 	'field' => 'name',
 					'label' => 'lang:title',
